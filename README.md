@@ -1,4 +1,4 @@
-#Oppgave: Containerisering av en Spring Boot-applikasjon med Docker
+# Oppgave: Containerisering av en Spring Boot-applikasjon med Docker
 
 ## Mål:
 Lag en Docker-fil som containeriserer en enkel Spring Boot-applikasjon, opprettet ved hjelp av Spring Initializr.
