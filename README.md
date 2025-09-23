@@ -4,8 +4,7 @@ Lag en Docker-fil som containeriserer en enkel Spring Boot-applikasjon, opprette
 
 ### Beskrivelse:
 
-Du har 20 minutter på deg til å containerisere en Spring Boot-applikasjon som du vil opprette ved hjelp av Spring Initializr og deretter pakke den som et Docker-image. Du kan gjøre oppgaven på egen maskin 
-eller i ditt Cloud9 miljø. Følg trinnene nedenfor for å fullføre oppgaven. 
+Du har 20 minutter på deg til å containerisere en Spring Boot-applikasjon som du vil opprette ved hjelp av Spring Initializr og deretter pakke den som et Docker-image. Du kan gjøre oppgaven på egen maskin eller i ditt et CloudShell-miljø. Følg trinnene nedenfor for å fullføre oppgaven. 
 
 ### Trinn 1: Opprett Spring Boot-applikasjon med Spring Initializr
 Bruk Spring Initializr (https://start.spring.io/) til å opprette en enkel Spring Boot-applikasjon. Velg en passende konfigurasjon og avhengigheter for din applikasjon. Last ned prosjektfilen når du er ferdig.
