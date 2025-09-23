@@ -1,19 +1,103 @@
 # Oppgave: Containerisering av en Spring Boot-applikasjon med Docker
 
-Lag en Docker-fil som containeriserer en enkel Spring Boot-applikasjon, opprettet ved hjelp av Spring Initializr.
+**Mål:** Opprett en enkel Spring Boot-applikasjon, pakk den i et Docker-image, og kjør den i en container.
+**Tid:** ca. 20 minutter
+**Arbeidssted:** Din egen maskin eller i et CloudShell-miljø
 
-### Beskrivelse:
+---
 
-Du har 20 minutter på deg til å containerisere en Spring Boot-applikasjon som du vil opprette ved hjelp av Spring Initializr og deretter pakke den som et Docker-image. Du kan gjøre oppgaven på egen maskin eller i ditt et CloudShell-miljø. Følg trinnene nedenfor for å fullføre oppgaven. 
+## Trinn 1 – Lag applikasjonen
 
-### Trinn 1: Opprett Spring Boot-applikasjon med Spring Initializr
-Bruk Spring Initializr (https://start.spring.io/) til å opprette en enkel Spring Boot-applikasjon. Velg en passende konfigurasjon og avhengigheter for din applikasjon. Last ned prosjektfilen når du er ferdig.
+* Bruk [Spring Initializr](https://start.spring.io/) til å generere et prosjekt.
+* Ta med minst én avhengighet (for eksempel *Spring Web*).
+* Last ned prosjektet og bygg applikasjonen slik at du får en kjørbar `.jar`-fil.
 
-#### Trinn 2: Lag en Docker-fil
-Opprett en Docker-fil som beskriver hvordan Spring Boot-applikasjonen skal pakkes inn i en Docker-container. Du må velge et passende baseimage og inkludere alle nødvendige trinn for å kopiere og kjøre applikasjonen i containeren.
+---
 
-### Trinn 3: Bygg Docker-image
-Bruk Docker CLI til å bygge Docker-imaget basert på Docker-filen du har opprettet. Sørg for at byggeprosessen går knirkefritt uten feil.
+## Trinn 2 – Opprett en Dockerfile
 
-### Trinn 4: Kjør Docker-containeren
-Start Docker-containeren basert på det opprettede Docker-imaget. Sjekk at Spring Boot-applikasjonen kjører som forventet i containermiljø
+* Lag en fil kalt **Dockerfile** i prosjektmappen.
+* Velg et passende base-image (f.eks. en lettvekts OpenJDK).
+* Sørg for at `.jar`-filen kopieres inn i imaget.
+* Definer hvordan applikasjonen skal starte når containeren kjører.
+
+---
+
+## Trinn 3 – Bygg Docker-imaget
+
+* Bruk Docker CLI til å bygge et image basert på Dockerfile-en din.
+* Gi imaget et navn du selv velger.
+
+---
+
+## Trinn 4 – Kjør applikasjonen i en container
+
+* Start en container basert på imaget du har laget.
+* Eksponer porten applikasjonen kjører på, og sjekk at applikasjonen fungerer.
+
+---
+
+💡 **Tips:**
+
+* Hold Dockerfile enkel.
+* Diskuter med sidemannen før du ber om hjelp.
+
+---
+
+## 📄 Cheat Sheet
+
+### Eksempel på minimal Dockerfile
+
+```dockerfile
+FROM openjdk:17-jdk-alpine
+COPY target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+```
+
+---
+
+### Vanlige Docker-kommandoer
+
+**Bygg image fra Dockerfile:**
+
+```bash
+docker build -t <image-navn> .
+```
+
+**Se hvilke images du har:**
+
+```bash
+docker images
+```
+
+**Kjør en container fra et image:**
+
+```bash
+docker run -p <lokal-port>:<container-port> <image-navn>
+```
+
+**Se hvilke containere som kjører:**
+
+```bash
+docker ps
+```
+
+**Stoppe en container:**
+
+```bash
+docker stop <container-id>
+```
+
+**Slette en container:**
+
+```bash
+docker rm <container-id>
+```
+
+**Slette et image:**
+
+```bash
+docker rmi <image-id>
+```
+
+
