@@ -100,4 +100,6 @@ docker rm <container-id>
 docker rmi <image-id>
 ```
 
+# Bonus 
 
+* Lag en multi-stage dockerfile 
