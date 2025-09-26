@@ -18,24 +18,19 @@
 
 * Lag en fil kalt **Dockerfile** i prosjektmappen.
 * Velg et passende base-image (f.eks. en lettvekts OpenJDK).
-* Sørg for at `.jar`-filen kopieres inn i imaget.
-* Definer hvordan applikasjonen skal starte når containeren kjører.
+* Forslag: Bruk en "Multi stage" dockerfil som også kompilerer koden
+* Husk Entrypoint - hvordan applikasjonen skal startes når containeren kjører.
 
----
 
 ## Trinn 3 – Bygg Docker-imaget
 
 * Bruk Docker CLI til å bygge et image basert på Dockerfile-en din.
 * Gi imaget et navn du selv velger.
 
----
-
 ## Trinn 4 – Kjør applikasjonen i en container
 
 * Start en container basert på imaget du har laget.
 * Eksponer porten applikasjonen kjører på, og sjekk at applikasjonen fungerer.
-
----
 
 💡 **Tips:**
 
@@ -45,16 +40,6 @@
 ---
 
 ## 📄 Cheat Sheet
-
-### Eksempel på minimal Dockerfile
-
-```dockerfile
-FROM openjdk:17-jdk-alpine
-COPY target/*.jar app.jar
-ENTRYPOINT ["java", "-jar", "/app.jar"]
-```
-
----
 
 ### Vanlige Docker-kommandoer
 
