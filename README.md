@@ -2,7 +2,7 @@
 
 **Mål:** Opprett en enkel Spring Boot-applikasjon, pakk den i et Docker-image, og kjør den i en container.
 **Tid:** ca. 20 minutter
-**Arbeidssted:** Din egen maskin eller i et CloudShell-miljø
+**Arbeidssted:** Din egen maskin.
 
 ---
 
