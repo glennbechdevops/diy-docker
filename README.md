@@ -32,11 +32,6 @@
 * Start en container basert på imaget du har laget.
 * Eksponer porten applikasjonen kjører på, og sjekk at applikasjonen fungerer.
 
-💡 **Tips:**
-
-* Hold Dockerfile enkel.
-* Diskuter med sidemannen før du ber om hjelp.
-
 ---
 
 ## 📄 Cheat Sheet
